@@ -5,19 +5,19 @@ if (!URL.canParse(process.env.WORDPRESS_API_URL)) {
   `);
 }
 
-const { protocol, hostname, port, pathname } = new URL(
-  process.env.WORDPRESS_API_URL,
-);
-
 /** @type {import('next').NextConfig} */
 module.exports = {
   images: {
     remotePatterns: [
       {
-        protocol: protocol.slice(0, -1),
-        hostname,
-        port,
-        pathname: `${pathname}/**`,
+        protocol: 'https',
+        hostname:'blog-mdb.000webhostapp.com',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname:'secure.gravatar.com',
+        pathname: '**',
       },
     ],
   },

@@ -25,12 +25,12 @@ export default function Alert({ preview }) {
             </>
           ) : (
             <>
-              The source code for this blog is{" "}
+              El contenido de este blog es tomado desde{" "}
               <a
-                href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
+                href={'https://www.mujeresdelblues.com'}
                 className="underline hover:text-success duration-200 transition-colors"
               >
-                available on GitHub
+                Mujeres del Blues
               </a>
               .
             </>
