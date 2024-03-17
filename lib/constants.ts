@@ -1,4 +1,4 @@
-export const EXAMPLE_PATH = "cms-wordpress";
+export const MDB_PATH = "https://www.mujeresdelblues.com";
 export const CMS_NAME = "Mujeres del Blues Blog";
 export const CMS_URL = "https://wordpress.org";
 export const HOME_OG_IMAGE_URL =

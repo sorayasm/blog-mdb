@@ -1,5 +1,5 @@
 import Container from "./container";
-import { EXAMPLE_PATH } from "../lib/constants";
+import { MDB_PATH } from "../lib/constants";
 
 export default function Footer() {
   return (
@@ -17,7 +17,7 @@ export default function Footer() {
               Read Documentation
             </a>
             <a
-              href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
+              href={`https://github.com/vercel/next.js/tree/canary/examples/${MDB_PATH}`}
               className="mx-3 font-bold hover:underline"
             >
               View on GitHub
