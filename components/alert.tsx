@@ -1,5 +1,10 @@
-import Container from "./container";
+// Sass
 import cn from "classnames";
+
+// Components
+import Container from "./container";
+
+// Libs
 import { CMS_NAME, MDB_PATH } from "../lib/constants";
 
 export default function Alert() {

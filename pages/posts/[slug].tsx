@@ -1,7 +1,10 @@
+// Next.js
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import Head from "next/head";
 import { GetStaticPaths, GetStaticProps } from "next";
+
+// Components
 import Container from "../../components/container";
 import PostBody from "../../components/post-body";
 import MoreStories from "../../components/more-stories";
@@ -11,6 +14,8 @@ import SectionSeparator from "../../components/section-separator";
 import Layout from "../../components/layout";
 import PostTitle from "../../components/post-title";
 import Tags from "../../components/tags";
+
+// Libs
 import { getAllPostsWithSlug, getPostAndMorePosts } from "../../lib/api";
 import { CMS_NAME } from "../../lib/constants";
 
@@ -20,6 +25,8 @@ export default function Post({ post, posts }) {
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
+  const { title, featuredImage, date, author, categories, content, tags } =
+    post;
 
   return (
     <Layout>
@@ -32,28 +39,27 @@ export default function Post({ post, posts }) {
             <article>
               <Head>
                 <title>
-                  {`${post.title} | Next.js Blog Example with ${CMS_NAME}`}
+                  {`${title} | Next.js Blog Example with ${CMS_NAME}`}
                 </title>
                 <meta
                   property="og:image"
-                  content={post.featuredImage?.node.sourceUrl}
+                  content={featuredImage?.node.sourceUrl}
                 />
               </Head>
               <PostHeader
-                title={post.title}
-                coverImage={post.featuredImage}
-                date={post.date}
-                author={post.author}
-                categories={post.categories}
+                title={title}
+                coverImage={featuredImage}
+                date={date}
+                author={author}
+                categories={categories}
               />
-              <PostBody content={post.content} />
-              <footer>
-                {post.tags.edges.length > 0 && <Tags tags={post.tags} />}
-              </footer>
+              <PostBody content={content} />
+              <footer>{tags.edges.length > 0 && <Tags tags={tags} />}</footer>
             </article>
-
             <SectionSeparator />
-            {morePosts.length > 0 && <MoreStories posts={morePosts} category="holi" />}
+            {morePosts.length > 0 && (
+              <MoreStories posts={morePosts} category="Otras publicaciones" />
+            )}
           </>
         )}
       </Container>
