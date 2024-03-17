@@ -2,20 +2,25 @@ import Avatar from "./avatar";
 import Date from "./date";
 import CoverImage from "./cover-image";
 import Link from "next/link";
+import Tags from "./tags";
 
-export default function HeroPost({
-  title,
-  coverImage,
-  date,
-  excerpt,
-  author,
-  slug,
-}) {
+export type HeroData = {
+  title: any;
+  featuredImage: any;
+  date: any;
+  excerpt: any;
+  author: any;
+  slug: any;
+  tags: any;
+};
+
+export default function HeroPost(data: HeroData) {
+  const { title, featuredImage, date, excerpt, author, slug, tags } = data;
   return (
     <section>
       <div className="mb-8 md:mb-16">
-        {coverImage && (
-          <CoverImage title={title} coverImage={coverImage} slug={slug} />
+        {featuredImage && (
+          <CoverImage title={title} coverImage={featuredImage} slug={slug} />
         )}
       </div>
       <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
@@ -37,6 +42,7 @@ export default function HeroPost({
             dangerouslySetInnerHTML={{ __html: excerpt }}
           />
           <Avatar author={author} />
+          <Tags tags={tags} />
         </div>
       </div>
     </section>

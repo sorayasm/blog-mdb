@@ -85,6 +85,20 @@ export async function getAllPostsForHome(preview) {
                 }
               }
             }
+            categories {
+              edges {
+                node {
+                  name
+                }
+              }
+            }
+            tags {
+              edges {
+                node {
+                  name
+                }
+              }
+            }
           }
         }
       }
