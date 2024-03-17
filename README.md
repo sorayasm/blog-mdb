@@ -1,6 +1,4 @@
-# An Incremental Static Regeneration Blog Example Using Next.js and WordPress
-
-Un blog creado con Next.js, Wordpress, Tailwind CSS, DaisyUI y contenido de Mujeresdelblues.com
+# Un blog creado con Next.js, Wordpress, Tailwind CSS, DaisyUI y contenido de Mujeresdelblues.com
 
 
 ## Deploy your own
